@@ -50,7 +50,7 @@ const ContactForm: React.FC<Props> = ({theme}) => {
                 'Accept': 'application/json'
             }
         }).then(res=>{
-            setAlertText({msg: "Sent!", type: "success"})
+            setAlertText({msg: "Sent! Thank you", type: "success"})
             setAlert(true)
             setTimeout(():void => {
                 setAlert(false)
@@ -86,7 +86,7 @@ const ContactForm: React.FC<Props> = ({theme}) => {
                     Message
                 </label>
                 <textarea value={msg} maxLength={120} onChange={(e)=>setMsg(e.target.value)} id="mensaje"></textarea>
-                <button disabled={isSubmitting}>Send</button>
+                <button disabled={isSubmitting}>{isSubmitting?'Sending...':'Send'}</button>
                 {
                     alert && <div className="alert">{alertText.msg}</div>
                 }
