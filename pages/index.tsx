@@ -1,10 +1,48 @@
-interface Props {}
+import Head from 'next/head'
+import Button from '../components/Button'
+import { homeStyles } from '../styles/homeStyles'
 
-const Index: React.FC<Props> = () => {
+const Index: React.FC = () => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>PZK - Home</title>
+      </Head>
 
-    </div>
+      <section className="hero__section">
+        <div className="hero__images">
+          <div className="monitor">
+            <img src="/images/monitor.png" alt="monitor" />
+          </div>
+          <div className="baldeAzul">
+            <img src="/images/balde-azul.png" alt="pintura" />
+          </div>
+          <div className="baldeVerde">
+            <img src="/images/balde-verde.png" alt="pintura" />
+          </div>
+          <div className="cubo">
+            <img src="/images/cubo.png" alt="cubo" />
+          </div>
+          <div className="esfera">
+            <img src="/images/esfera.png" alt="esfera" />
+          </div>
+        </div>
+
+        <div className="hero__text">
+          <h1>Hi! I'm Martín Pilaszek, <br/>and I'm front-end developer.</h1>
+          <div className="buttons">
+            <Button mt={.3} mb={.3} link="/proyectos" ghost color="azul">
+              Projects
+            </Button>
+            <Button mt={.3} mb={.3} link="/contacto" color="azul">
+              Contact
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <style jsx>{homeStyles}</style>
+    </>
   )
 }
 
