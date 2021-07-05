@@ -2,9 +2,8 @@ import { useState } from "react"
 import Link from 'next/link'
 import { styles } from "./styles"
 import Logo from "../Logo"
-import CloseIcon from "../Icons/CloseIcon"
-import MenuIcon from "../Icons/MenuIcon"
 import { Title } from "../Texts"
+import { CloseIcon, MenuIcon } from "../Icons"
 
 const Header: React.FC = () => {
     const [menu, setMenu] = useState<boolean>(false)

@@ -17,5 +17,5 @@ export const getColor = (color?:string): string => {
                 return "#fff"
             default: return colors.azul
         }
-    }else return '#000'
+    }else return colors.azul
 }

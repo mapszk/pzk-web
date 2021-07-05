@@ -1,10 +1,6 @@
-import { FaGithub } from 'react-icons/fa'
-import { GrMail } from 'react-icons/gr'
-import { IconContext } from 'react-icons/lib'
 import Link from 'next/link'
 import { colors } from '../../styles/colors'
-import GithubIcon from '../Icons/GitHubIcon'
-import MailIcon from '../Icons/MailIcon'
+import { GithubIcon, MailIcon } from '../Icons'
 
 const Footer: React.FC = () => {
     return (

@@ -10,6 +10,7 @@ const Container: React.FC = ({children}) => {
                     max-width: 960px;
                     margin: 0 auto;
                     min-height: calc(100vh - 100px);
+                    padding: .5rem 0;
                 }    
             `}</style>
         </>
