@@ -54,6 +54,7 @@ h1{
   width: 50%;
   transform: translateX(35px);
 }
+
 .baldeVerde{
   z-index: 1;
   width: 100%;
@@ -68,6 +69,7 @@ h1{
 .baldeVerde img{
   width: 50%;
 }
+
 .cubo{
   grid-column: 1 / 3;
   grid-row: 3 / 5;

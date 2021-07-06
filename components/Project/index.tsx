@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { Title, Para } from '../Texts'
 import Button from '../Button'
 

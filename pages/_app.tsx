@@ -5,6 +5,8 @@ import Container from '../components/Layout'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+import '../styles/home.css'
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
