@@ -31,10 +31,10 @@ const Index: React.FC = () => {
         <div className="hero__text">
           <h1>Hi! I'm Martín Pilaszek, <br/>and I'm front-end developer.</h1>
           <div className="buttons">
-            <Button mt={.3} mb={.3} link="/proyectos" ghost color="azul">
+            <Button mt={.3} mb={.3} link="/projects" ghost color="azul">
               Projects
             </Button>
-            <Button mt={.3} mb={.3} link="/contacto" color="azul">
+            <Button mt={.3} mb={.3} link="/contact" color="azul">
               Contact
             </Button>
           </div>
