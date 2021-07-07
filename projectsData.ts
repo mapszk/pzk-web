@@ -9,7 +9,7 @@ export const projects = [
     {
         id: 2,
         title: "Rate Your Play",
-        desc: "Rate Your Play is a website where you can create an account and start rating and review all your games you've played. The website is developed with Create React App, and use TailwindCSS. The database and authentication is provided by Firebase.",
+        desc: "Rate Your Play is a website where you can create an account and start rating and review all your games you've played. The website is developed with React and TailwindCSS. The database and authentication is provided by Firebase.",
         img: "/images/projects/rate-your-play.png",
         link: "https://rate-your-play.vercel.app"
     },

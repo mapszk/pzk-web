@@ -34,7 +34,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         h1,h2,h3,h4,h5{
           margin: 0;
           font-weight: 600;
-          line-height: 1.3em;
         }
         p{
           margin: .2rem 0 1.2rem 0;

@@ -37,7 +37,7 @@ h1{
   grid-column: 2 / 4;
   grid-row: 2 / 4;
   width: 100%; 
-  animation: floatMonitor 8s ease infinite alternate;
+  animation: floatMonitor 8s ease-in-out infinite alternate;
 }
 .baldeAzul{
   z-index: -1;
@@ -48,7 +48,7 @@ h1{
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  animation: floatPintura 5s ease 1s infinite alternate;
+  animation: floatPintura 5s ease-in-out 1s infinite alternate;
 }
 .baldeAzul img{
   width: 50%;
@@ -64,7 +64,7 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: floatPintura 6s ease 2s infinite alternate;
+  animation: floatPintura 6s ease-in-out 2s infinite alternate;
 }
 .baldeVerde img{
   width: 50%;
@@ -79,7 +79,7 @@ h1{
   justify-content: center;
   align-items: center;
   padding-right: 5rem;
-  animation: floatFigura 5s ease infinite alternate;
+  animation: floatFigura 5s ease-in-out infinite alternate;
 }
 .cubo img{
   width: 50%;
@@ -94,7 +94,7 @@ h1{
   align-items: flex-start;
   padding-left: 4rem;
   padding-top: 3rem;
-  animation: floatFigura 5s ease infinite alternate;
+  animation: floatFigura 5s ease-in-out infinite alternate;
 }
 .esfera img{
   width: 35%;

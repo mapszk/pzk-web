@@ -15,7 +15,7 @@ export const Title: React.FC<Props> = ({children, className, color}) => {
             <style jsx>{`
                 h2{
                     color: ${getColor(color)};
-                    margin: 0 0 .2rem 0;
+                    margin: 0 0 .5rem 0;
                 }
             `}</style>
         </>
