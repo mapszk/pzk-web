@@ -21,7 +21,7 @@ const Button: React.FC<Props> = ({isExternal, link, color, ghost, onClick, full,
                 link 
                 ? 
                     isExternal ?
-                    <a href={link} target="_blank"> 
+                    <a href={link} rel="noreferrer noopener"  target="_blank"> 
                         {children}
                     </a> :
                     <Link href={link} >
