@@ -34,7 +34,7 @@ const Project: React.FC<Props> = ({id, title, desc, img, link}) => {
                     <Title>{title}</Title>
                     <Para>{desc}</Para>
                     <div className="button">
-                        <Button link={link} color="azul" full={isLargerThan640}>
+                        <Button isExternal link={link} color="azul" full={isLargerThan640}>
                             Visit
                         </Button>
                     </div>

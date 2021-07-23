@@ -5,6 +5,7 @@ interface Props {
     color: string;
     ghost?: boolean;
     link?: string;
+    isExternal?: boolean;
     onClick?: ()=>void;
     full?: boolean;
     mt?: number;
@@ -13,16 +14,22 @@ interface Props {
     ml?: number;
 }
 
-const Button: React.FC<Props> = ({link, color, ghost, onClick, full, mt, mb, mr, ml, children}) => {
+const Button: React.FC<Props> = ({isExternal, link, color, ghost, onClick, full, mt, mb, mr, ml, children}) => {
     return(
         <>
             {
-                link ? 
-                <Link href={link} >
-                    <a>
+                link 
+                ? 
+                    isExternal ?
+                    <a href={link} target="_blank"> 
                         {children}
-                    </a>
-                </Link> :
+                    </a> :
+                    <Link href={link} >
+                        <a>
+                            {children}
+                        </a>
+                    </Link> 
+                :
                 <button onClick={onClick}>
                     {children}
                 </button>

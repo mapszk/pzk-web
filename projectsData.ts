@@ -7,10 +7,17 @@ export const projects = [
         link: "https://mapszk.github.io/task-manager-app/"
     },
     {
-        id: 2,
+        id: 3,
         title: "Rate Your Play",
         desc: "Rate Your Play is a website where you can create an account and start rating and review all your games you've played. The website is developed with React and TailwindCSS. The database and authentication is provided by Firebase.",
         img: "/images/projects/rate-your-play.png",
-        link: "https://rate-your-play.vercel.app"
+        link: "https://rateyourplay.vercel.app"
     },
+    {
+        id: 2,
+        desc: "Ezcommerce is a self-manage e-commerce website, you can create categories, subcategories, and upload your products. Also you can customize your store colors, name, and a welcome message. Developed with Firebase and Next.js, use MercadoPago CheckOut API for payment (in test mode for demo).",
+        title: "Ezcommerce",
+        img: "/images/projects/ezcommerce.png",
+        link: "https://ezcommerce.vercel.app"
+    }
 ]
