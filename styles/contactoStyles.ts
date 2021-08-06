@@ -23,8 +23,8 @@ export const contactoStyles = css`
         margin: 1rem 0;
     }
     .grid__item {
-        width: 100px;
-        height: 100px;
+        min-width: 100px;
+        min-height: 100px;
         background-color: white;
         padding: 1rem;
         border-radius: 10px;
