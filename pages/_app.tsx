@@ -4,10 +4,23 @@ import { colors } from '../styles/colors'
 import Container from '../components/Layout'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import * as gtag from '../util/gtag'
 
 import '../styles/home.css'
+import { useRouter } from 'next/dist/client/router'
+import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+  useEffect(()=>{
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url)
+    }
+    router.events.on("routeChangeComplete", handleRouteChange)
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange)
+    }
+  }, [router.events])
   return (
     <>
       <Head>
