@@ -7,6 +7,7 @@ import {
     SiJavascript,
     SiAdobeillustrator,
     SiAdobexd,
+    SiTypescript,
 } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaSass, FaReact } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
@@ -58,6 +59,14 @@ const Contact: React.FC = () => {
                                 <SiJavascript />
                             </IconContext.Provider>
                             <h5>JavaScript</h5>
+                        </div>
+                        <div className="grid__item">
+                            <IconContext.Provider
+                                value={{ color: colors.azul, size: "32px" }}
+                            >
+                                <SiTypescript />
+                            </IconContext.Provider>
+                            <h5>TypeScript</h5>
                         </div>
                         <div className="grid__item">
                             <IconContext.Provider
