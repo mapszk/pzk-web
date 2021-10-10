@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Button from '../components/Button'
-import { homeStyles } from '../styles/homeStyles'
+import Head from "next/head"
+import Button from "../components/Button"
+import { homeStyles } from "../styles/homeStyles"
 
 const Index: React.FC = () => {
   return (
@@ -29,12 +29,15 @@ const Index: React.FC = () => {
         </div>
 
         <div className="hero__text">
-          <h1>Hi! I'm Martín Pilaszek, <br/>and I'm front-end developer.</h1>
+          <h1>
+            Hi! I'm Martín Pilaszek, <br />
+            and I'm front-end developer.
+          </h1>
           <div className="buttons">
-            <Button mt={.3} mb={.3} link="/projects" ghost color="azul">
+            <Button mt={0.3} mb={0.3} link="/projects" ghost color="azul">
               Projects
             </Button>
-            <Button mt={.3} mb={.3} link="/contact" color="azul">
+            <Button mt={0.3} mb={0.3} link="/contact" color="azul">
               Contact
             </Button>
           </div>

@@ -1,18 +1,18 @@
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import { colors } from '../styles/colors'
-import Container from '../components/Layout'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import * as gtag from '../util/gtag'
+import type { AppProps } from "next/app"
+import Head from "next/head"
+import { colors } from "../styles/colors"
+import Container from "../components/Layout"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import * as gtag from "../util/gtag"
 
-import '../styles/home.css'
-import { useRouter } from 'next/dist/client/router'
-import { useEffect } from 'react'
+import "../styles/home.css"
+import { useRouter } from "next/dist/client/router"
+import { useEffect } from "react"
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
-  useEffect(()=>{
+  useEffect(() => {
     const handleRouteChange = (url: URL) => {
       gtag.pageview(url)
     }
@@ -32,32 +32,36 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Container>
       <Footer />
       <style jsx global>{`
-        *{
+        * {
           box-sizing: border-box;
         }
-        section{
+        section {
           margin-bottom: 1rem;
         }
-        body{
+        body {
           margin: 0;
           padding: 0;
-          font-family: 'Epilogue';
-          background-color: ${colors.gris}
+          font-family: "Epilogue";
+          background-color: ${colors.gris};
         }
-        h1,h2,h3,h4,h5{
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
           margin: 0;
           font-weight: 600;
         }
-        p{
-          margin: .2rem 0 1.2rem 0;
+        p {
+          margin: 0.2rem 0 1.2rem 0;
           line-height: 1.5em;
         }
-        a{
+        a {
           margin: 0;
           text-decoration: none;
           padding: 0;
         }
-        button{
+        button {
           border: none;
         }
       `}</style>

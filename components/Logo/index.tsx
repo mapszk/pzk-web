@@ -1,21 +1,19 @@
 import { getColor } from "../../styles/colors"
 
 interface Props {
-    color: string;
-    width: number;
+  color: string
+  width: number
 }
 
-const Logo: React.FC<Props> = ({color, width}) => {
+const Logo: React.FC<Props> = ({ color, width }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 503.14 107.99"
-      width={width+"px"}
+      width={width + "px"}
     >
       <defs>
-        <style>{`.prefix__cls-1{fill:${
-            getColor(color)
-        }`}</style>
+        <style>{`.prefix__cls-1{fill:${getColor(color)}`}</style>
       </defs>
       <title>{"logo"}</title>
       <g id="prefix__Capa_2" data-name="Capa 2">
