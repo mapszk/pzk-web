@@ -2,6 +2,7 @@
 import React, { useState } from "react"
 import { colors } from "../../styles/colors"
 
+const formEndpoint = 'https://formspree.io/f/xdoyegpk'
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
 interface Alert {
   msg?: string
@@ -38,17 +39,16 @@ const ContactForm: React.FC<Props> = ({ theme }) => {
       }, 5000)
       return
     } else {
-      handleSubmit(name, email, msg)
+      handleSubmit(name, email, msg, formEndpoint)
     }
   }
-  const handleSubmit = (name: string, email: string, msg: string) => {
+  const handleSubmit = (name: string, email: string, msg: string, endpoint: string) => {
     setIsSubmitting(true)
-    fetch("/api/contact", {
+    fetch(endpoint, {
       method: "POST",
       body: JSON.stringify({ name, email, msg }),
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json"
+        Accept: "application/json",
       },
     })
       .then((res) => {
