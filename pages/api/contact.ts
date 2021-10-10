@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import nodemailer from "nodemailer"
 
-export default function (req: NextApiRequest, res: NextApiResponse) {
+export default async function (req: NextApiRequest, res: NextApiResponse) {
   const transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.gmail.com",
@@ -24,16 +24,19 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
       </div>
     `,
   }
-  console.log(req.body, mailData)
-  transporter.sendMail(mailData, (err, info) => {
-    if (err) {
-      console.log(err)
-      res.status(400).send("Error")
-      res.end()
-    } else {
-      console.log(info)
-      res.status(200).send("Sent")
-      res.end()
-    }
+  await new Promise((res, rej) => {
+    transporter.sendMail(mailData, (err, info) => {
+      if (err) {
+        rej(err)
+      } else {
+        res(info)
+      }
+    })
   })
+    .then(() => {
+      res.status(200).json({ status: "ok" })
+    })
+    .catch(() => {
+      res.status(400).json({ status: "error" })
+    })
 }
