@@ -7,8 +7,14 @@ import { CloseIcon, MenuIcon } from "../Icons"
 
 const Header: React.FC = () => {
   const [menu, setMenu] = useState<boolean>(false)
-  const handleMenuOn = (): void => setMenu(true)
-  const handleMenuOff = (): void => setMenu(false)
+  const handleMenuOn = (): void => {
+    document.body.style.overflow = "hidden"
+    setMenu(true)
+  }
+  const handleMenuOff = (): void => {
+    document.body.style.overflow = "auto"
+    setMenu(false)
+  }
 
   return (
     <>
