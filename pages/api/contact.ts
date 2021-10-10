@@ -36,7 +36,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     .then(() => {
       res.status(200).json({ status: "ok" })
     })
-    .catch(() => {
-      res.status(400).json({ status: "error" })
+    .catch((err) => {
+      res.status(400).json({ status: "error", message: err })
     })
 }
