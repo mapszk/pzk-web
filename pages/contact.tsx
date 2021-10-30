@@ -2,16 +2,8 @@ import Head from "next/head"
 import { Title, Subtitle, Para } from "../components/Texts"
 import ContactForm from "../components/ContactForm"
 import { contactoStyles } from "../styles/contactoStyles"
-import {
-  SiNextDotJs,
-  SiJavascript,
-  SiAdobeillustrator,
-  SiAdobexd,
-  SiTypescript,
-} from "react-icons/si"
-import { FaHtml5, FaCss3Alt, FaSass, FaReact } from "react-icons/fa"
-import { IconContext } from "react-icons/lib"
-import { colors } from "../styles/colors"
+import Tools from "../components/Tools"
+import { tools } from "../tools"
 
 const Contact: React.FC = () => {
   return (
@@ -34,83 +26,9 @@ const Contact: React.FC = () => {
           </Para>
           <Title>Tools</Title>
           <Subtitle>Development</Subtitle>
-          <div className="grid">
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "35px" }}
-              >
-                <FaHtml5 />
-              </IconContext.Provider>
-              <h5>HTML</h5>
-            </div>
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "35px" }}
-              >
-                <FaCss3Alt />
-              </IconContext.Provider>
-              <h5>CSS</h5>
-            </div>
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "32px" }}
-              >
-                <SiJavascript />
-              </IconContext.Provider>
-              <h5>JavaScript</h5>
-            </div>
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "32px" }}
-              >
-                <SiTypescript />
-              </IconContext.Provider>
-              <h5>TypeScript</h5>
-            </div>
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "35px" }}
-              >
-                <FaSass />
-              </IconContext.Provider>
-              <h5>Sass</h5>
-            </div>
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "35px" }}
-              >
-                <FaReact />
-              </IconContext.Provider>
-              <h5>React</h5>
-            </div>
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "32px" }}
-              >
-                <SiNextDotJs />
-              </IconContext.Provider>
-              <h5>Next</h5>
-            </div>
-          </div>
+          <Tools tools={tools.dev} />
           <Subtitle>Design</Subtitle>
-          <div className="grid">
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "30px" }}
-              >
-                <SiAdobeillustrator />
-              </IconContext.Provider>
-              <h5>Illustrator</h5>
-            </div>
-            <div className="grid__item">
-              <IconContext.Provider
-                value={{ color: colors.azul, size: "30px" }}
-              >
-                <SiAdobexd />
-              </IconContext.Provider>
-              <h5>Adobe XD</h5>
-            </div>
-          </div>
+          <Tools tools={tools.design} />
         </section>
         <style jsx>{contactoStyles}</style>
       </div>
