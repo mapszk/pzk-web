@@ -2,8 +2,6 @@ import { useState } from "react"
 import Link from "next/link"
 import { styles } from "./styles"
 import Logo from "../Logo"
-import { Title } from "../Texts"
-import { CloseIcon, MenuIcon } from "../Icons"
 
 const Header: React.FC = () => {
   const [menu, setMenu] = useState<boolean>(false)
@@ -20,27 +18,30 @@ const Header: React.FC = () => {
     <>
       <div className={menu ? "menu-on" : "menu-off"}>
         <div className="menu__close">
-          <CloseIcon width={20} color="azul" handleClick={handleMenuOff} />
+          <img
+            src="https://icongr.am/feather/x.svg?size=128&color=052b36"
+            alt="Close"
+          />
         </div>
         <ul className="menu__list">
           <li className="menu__list_item">
             <Link href="/">
               <a onClick={handleMenuOff} className="menu__link">
-                <Title>Home</Title>
+                <h2>Home</h2>
               </a>
             </Link>
           </li>
           <li className="menu__list_item">
             <Link href="/projects">
               <a onClick={handleMenuOff} className="menu__link">
-                <Title>Projects</Title>
+                <h2>Projects</h2>
               </a>
             </Link>
           </li>
           <li className="menu__list_item">
             <Link href="/contact">
               <a onClick={handleMenuOff} className="menu__link">
-                <Title>Contact</Title>
+                <h2>Contact</h2>
               </a>
             </Link>
           </li>
@@ -73,7 +74,10 @@ const Header: React.FC = () => {
             </ul>
           </nav>
           <div className="menu__open">
-            <MenuIcon color="azul" width={20} handleClick={handleMenuOn} />
+            <img
+              src="https://icongr.am/feather/menu.svg?size=128&color=052b36"
+              alt="Menu"
+            />
           </div>
         </div>
       </header>

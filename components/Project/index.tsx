@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { Title, Para } from "../Texts"
 import Button from "../Button"
 
 interface Props {
@@ -31,8 +30,8 @@ const Project: React.FC<Props> = ({ id, title, desc, img, link }) => {
           <img src={img} alt={title} />
         </div>
         <div className="proj__desc">
-          <Title>{title}</Title>
-          <Para>{desc}</Para>
+          <h2>{title}</h2>
+          <p>{desc}</p>
           <div className="button">
             <Button isExternal link={link} color="azul" full={isLargerThan640}>
               Visit

@@ -1,5 +1,4 @@
 import Head from "next/head"
-import { Title, Subtitle, Para } from "../components/Texts"
 import ContactForm from "../components/ContactForm"
 import { contactoStyles } from "../styles/contactoStyles"
 import Tools from "../components/Tools"
@@ -13,21 +12,20 @@ const Contact: React.FC = () => {
       </Head>
       <div className="general">
         <section className="form__section">
-          <Title color="verde">Contact</Title>
-          <ContactForm theme="dark" />
+          <ContactForm />
         </section>
         <section className="aboutme__section">
-          <Title>About me</Title>
-          <Para>
+          <h1>About me</h1>
+          <p>
             My name is Martin, I develop websites adapted to the client needs,
             looking always for optimal performance, and using design standards
             according to the product or the service. I'm a self-taught person in
             constant learning. Let's work together!
-          </Para>
-          <Title>Tools</Title>
-          <Subtitle>Development</Subtitle>
+          </p>
+          <h2>Tools</h2>
+          <h4>Development</h4>
           <Tools tools={tools.dev} />
-          <Subtitle>Design</Subtitle>
+          <h4>Design</h4>
           <Tools tools={tools.design} />
         </section>
         <style jsx>{contactoStyles}</style>

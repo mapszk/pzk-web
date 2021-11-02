@@ -1,4 +1,3 @@
-import { Para, Title } from "../components/Texts"
 import Button from "../components/Button"
 
 const NotFound: React.FC = () => {
@@ -6,8 +5,8 @@ const NotFound: React.FC = () => {
     <>
       <div>
         <img src="/images/error.png" alt="404 not found" />
-        <Title>Sorry</Title>
-        <Para>Apparently the page you're looking for doesn't exist</Para>
+        <h1>Sorry</h1>
+        <p>Apparently the page you're looking for doesn't exist</p>
         <Button color="azul" link="/" mt={1}>
           Go home
         </Button>
