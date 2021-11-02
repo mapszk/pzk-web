@@ -1,8 +1,9 @@
 import Button from "../components/Button"
+import Layout from "../components/Layout"
 
 const NotFound: React.FC = () => {
   return (
-    <>
+    <Layout title="PZK - Not found">
       <div>
         <img src="/images/error.png" alt="404 not found" />
         <h1>Sorry</h1>
@@ -37,7 +38,7 @@ const NotFound: React.FC = () => {
           }
         }
       `}</style>
-    </>
+    </Layout>
   )
 }
 

@@ -1,14 +1,11 @@
-import Head from "next/head"
 import { ReactElement } from "react"
+import Layout from "../components/Layout"
 import Project from "../components/Project"
 import { projects } from "../projectsData"
 
 const Projects: React.FC = () => {
   return (
-    <>
-      <Head>
-        <title>PZK - Projects</title>
-      </Head>
+    <Layout title="PZK - Projects">
       <h2>Projects</h2>
       {projects
         .sort((a, b) => b.id - a.id)
@@ -24,7 +21,7 @@ const Projects: React.FC = () => {
             />
           )
         })}
-    </>
+    </Layout>
   )
 }
 

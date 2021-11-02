@@ -1,15 +1,12 @@
-import Head from "next/head"
 import ContactForm from "../components/ContactForm"
 import { contactoStyles } from "../styles/contactoStyles"
 import Tools from "../components/Tools"
 import { tools } from "../tools"
+import Layout from "../components/Layout"
 
 const Contact: React.FC = () => {
   return (
-    <>
-      <Head>
-        <title>PZK - Contact</title>
-      </Head>
+    <Layout title="PZK - Contact">
       <div className="general">
         <section className="form__section">
           <ContactForm />
@@ -30,7 +27,7 @@ const Contact: React.FC = () => {
         </section>
         <style jsx>{contactoStyles}</style>
       </div>
-    </>
+    </Layout>
   )
 }
 

@@ -1,14 +1,11 @@
 import Head from "next/head"
 import Button from "../components/Button"
+import Layout from "../components/Layout"
 import { homeStyles } from "../styles/homeStyles"
 
 const Index: React.FC = () => {
   return (
-    <>
-      <Head>
-        <title>PZK - Home</title>
-      </Head>
-
+    <Layout title="PZK - Home">
       <section className="hero__section">
         <div className="hero__images">
           <div className="monitor">
@@ -45,7 +42,7 @@ const Index: React.FC = () => {
       </section>
 
       <style jsx>{homeStyles}</style>
-    </>
+    </Layout>
   )
 }
 

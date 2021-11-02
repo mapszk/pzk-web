@@ -6,8 +6,10 @@ import Footer from "../components/Footer"
 import * as gtag from "../util/gtag"
 import { useRouter } from "next/dist/client/router"
 import { useEffect } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // GOOGLE ANALYTICS
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
@@ -18,17 +20,25 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange)
     }
   }, [router.events])
+
   return (
     <>
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
         <Component {...pageProps} />
-      </main>
+      </AnimatePresence>
       <Footer />
       <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
         * {
           box-sizing: border-box;
         }
@@ -64,7 +74,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         button {
           border: none;
         }
-        main {
+        .main {
           width: 95%;
           max-width: 960px;
           margin: 0 auto;
