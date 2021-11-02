@@ -9,6 +9,7 @@ export const styles = css`
     background-color: ${colors.gris};
   }
   .navbar__container {
+    height: 100%;
     width: 95%;
     max-width: 960px;
     display: flex;
@@ -62,6 +63,11 @@ export const styles = css`
     position: fixed;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
     transform: translateX(1000%);
     transition: transform 1s ease;
     background-color: ${colors.gris};
@@ -85,6 +91,12 @@ export const styles = css`
     right: calc(-100vw / 2 + 30px);
     top: calc(-100vh / 2 + 30px);
     position: relative;
+    width: 25px;
+    cursor: pointer;
+  }
+  .menu__open {
+    height: 22px;
+    cursor: pointer;
   }
 
   @media screen and (min-width: 720px) {

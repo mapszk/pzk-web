@@ -16,13 +16,14 @@ const Header: React.FC = () => {
 
   return (
     <>
+      {/* MOBILE MENU */}
       <div className={menu ? "menu-on" : "menu-off"}>
-        <div className="menu__close">
-          <img
-            src="https://icongr.am/feather/x.svg?size=128&color=052b36"
-            alt="Close"
-          />
-        </div>
+        <img
+          className="menu__close"
+          onClick={handleMenuOff}
+          src="https://icongr.am/feather/x.svg?size=128&color=052b36"
+          alt="Close"
+        />
         <ul className="menu__list">
           <li className="menu__list_item">
             <Link href="/">
@@ -47,6 +48,7 @@ const Header: React.FC = () => {
           </li>
         </ul>
       </div>
+      {/* HEADER */}
       <header className="navbar">
         <div className="navbar__container">
           <Link href="/">
@@ -73,12 +75,12 @@ const Header: React.FC = () => {
               </li>
             </ul>
           </nav>
-          <div className="menu__open">
-            <img
-              src="https://icongr.am/feather/menu.svg?size=128&color=052b36"
-              alt="Menu"
-            />
-          </div>
+          <img
+            onClick={handleMenuOn}
+            src="https://icongr.am/feather/menu.svg?size=128&color=052b36"
+            alt="Menu"
+            className="menu__open"
+          />
         </div>
       </header>
       <style jsx>{styles}</style>
