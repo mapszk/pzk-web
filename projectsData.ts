@@ -8,7 +8,7 @@ export const projects = [
   },
   {
     id: 2,
-    desc: "Ezcommerce is a self-manage e-commerce website, you can create categories, subcategories, and upload your products. Also you can customize your store colors, name, and a welcome message. Developed with Firebase and Next.js, use MercadoPago CheckOut API for payment (in test mode for demo).",
+    desc: "Ezcommerce is a self-manage e-commerce website, you can create categories, upload your products, customize your store and more. Developed with Firebase and Next.js, use MercadoPago CheckOut API for payment (in test mode for demo).",
     title: "Ezcommerce",
     img: "/images/projects/ezcommerce.png",
     link: "https://ezcommerce.vercel.app",
