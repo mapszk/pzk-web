@@ -1,18 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from "react"
 import { colors } from "../../styles/colors"
-
-const formEndpoint = 'https://formspree.io/f/xdoyegpk'
-const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+import { submit } from "./submit"
 interface Alert {
-  msg?: string
+  message?: string
   type?: string
 }
-interface Props {
-  theme?: string
-}
 
-const ContactForm: React.FC<Props> = ({ theme }) => {
+const ContactForm: React.FC = () => {
   const [name, setName] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [msg, setMsg] = useState<string>("")
@@ -20,66 +15,26 @@ const ContactForm: React.FC<Props> = ({ theme }) => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
   const [alertText, setAlertText] = useState<Alert>({})
 
-  const handleValidation = (e: React.SyntheticEvent): void => {
-    e.preventDefault()
-    if (name === "" || email === "" || msg === "") {
-      setAlert(true)
-      setAlertText({ msg: "Please fill all the fields", type: "error" })
-      setTimeout((): void => {
-        setAlert(false)
-        setAlertText({})
-      }, 5000)
-      return
-    } else if (!emailRegex.test(email)) {
-      setAlert(true)
-      setAlertText({ msg: "Please put a valid email", type: "error" })
-      setTimeout((): void => {
-        setAlert(false)
-        setAlertText({})
-      }, 5000)
-      return
-    } else {
-      handleSubmit(name, email, msg, formEndpoint)
-    }
+  const clearAlert = () => {
+    setTimeout(()=> {
+      setAlert(false)
+      setAlertText({})
+    }, 5000)
   }
-  const handleSubmit = (name: string, email: string, msg: string, endpoint: string) => {
+  const submitForm = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
     setIsSubmitting(true)
-    fetch(endpoint, {
-      method: "POST",
-      body: JSON.stringify({ name, email, msg }),
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((res) => {
-        setAlertText({ msg: "Sent! Thank you", type: "success" })
-        setAlert(true)
-        setTimeout((): void => {
-          setAlert(false)
-          setAlertText({})
-        }, 5000)
-        setName("")
-        setEmail("")
-        setMsg("")
-        setIsSubmitting(false)
-      })
-      .catch((err) => {
-        setAlertText({
-          msg: "An error has ocurred, please try again",
-          type: "error",
-        })
-        setAlert(true)
-        setTimeout((): void => {
-          setAlert(false)
-          setAlertText({})
-        }, 5000)
-        setIsSubmitting(false)
-      })
+    const {message, type} = await submit(name, email, msg)
+    setAlert(true)
+    setAlertText({type, message})
+    setIsSubmitting(false)
+    clearAlert()
   }
 
   return (
     <>
-      <form onSubmit={handleValidation}>
+      <form onSubmit={submitForm}>
+        <h1>Contact</h1>
         <label>
           Name
           <input
@@ -106,9 +61,12 @@ const ContactForm: React.FC<Props> = ({ theme }) => {
         <button disabled={isSubmitting}>
           {isSubmitting ? "Sending..." : "Send"}
         </button>
-        {alert && <div className="alert">{alertText.msg}</div>}
+        {alert && <div className="alert">{alertText.message}</div>}
       </form>
       <style jsx>{`
+        h1{
+          color: ${colors.verde};
+        }
         .alert {
           color: ${alertText.type === "error" ? colors.gris : colors.azul};
           background-color: ${alertText.type === "error"
@@ -124,7 +82,7 @@ const ContactForm: React.FC<Props> = ({ theme }) => {
         }
         .form__section > h2,
         label {
-          color: ${theme === "dark" ? colors.verde : colors.azul};
+          color: ${colors.verde};
           margin-bottom: 0.5rem;
         }
         input {
@@ -165,8 +123,8 @@ const ContactForm: React.FC<Props> = ({ theme }) => {
           height: 2.5rem;
           border-radius: 2.5rem;
           border: none;
-          background-color: ${theme === "dark" ? colors.verde : colors.azul};
-          color: ${theme === "dark" ? colors.azul : colors.verde};
+          background-color: ${colors.verde};
+          color: ${colors.azul};
           font-family: inherit;
           font-size: 1rem;
           transition: background-color 0.5s ease, border 0.2s ease,
@@ -179,9 +137,9 @@ const ContactForm: React.FC<Props> = ({ theme }) => {
         }
         button:hover,
         button:focus {
-          background-color: ${theme === "dark" ? colors.azul : colors.verde};
-          border: 2px solid ${theme === "dark" ? colors.verde : colors.azul};
-          color: ${theme === "dark" ? colors.verde : colors.azul};
+          background-color: ${colors.azul};
+          border: 2px solid ${colors.verde};
+          color: ${colors.verde};
         }
       `}</style>
     </>
